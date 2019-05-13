@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Website URL
+http://adidas-code-challenge.herokuapp.com/
+
 ## How force the language by query param
 Use the param **lng** which value could be **en**(English) or **de**(German), for example [http://localhost:3000/?lng=de](http://localhost:3000/?lng=de)
 
