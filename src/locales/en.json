@@ -6,6 +6,8 @@
     "receiveNewsletter": "Receive a newsletter?",
     "older18Years": "By law you must be older than 18 years old?",
     "email": "Email Address",
+    "submitSuccess": "User saved with success!",
+    "submitError": "Error on saving the user!",
     "showReceiveNewsletter": false,
     "showEmail": true,
     "showOlder18Years": true,

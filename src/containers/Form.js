@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import FormLabel from '@material-ui/core/FormLabel';
 import { t } from 'i18next';
+import Alert, { openAlert } from 'simple-react-alert';
 
 import SignUser from "../services/SignUser";
 import GenderRadioGroup from '../components/GenderRadioGroup';
@@ -91,13 +92,20 @@ function Form(props) {
   const [gender, setGender]                       = useState("male");
 
   const onSubmit = (e) => {
-    SignUser({ email, older18Years, receiveNewsletter, gender });
+
+    SignUser({ email, older18Years, receiveNewsletter, gender }).then(() => {
+      openAlert({ message: t("form.submitSuccess"), type: "success" });
+    }).catch(() => {
+      openAlert({ message: t("form.submitError"), type: "danger" });
+    });
+
     e.preventDefault();
   }
 
   return (
     <main className={classes.main}>
       <CssBaseline />
+      <Alert />
       <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />

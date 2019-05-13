@@ -6,6 +6,8 @@
     "receiveNewsletter": "Newsletter erhalten?",
     "older18Years": "Laut Gesetz müssen Sie älter als 18 Jahre sein?",
     "email": "E-Mail-Addresse",
+    "submitSuccess": "Benutzer mit Erfolg gespeichert!",
+    "submitError": "Fehler beim Speichern des Benutzers!",
     "showReceiveNewsletter": true,
     "showEmail": true,
     "showOlder18Years": true,
