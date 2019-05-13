@@ -17,6 +17,7 @@ import Alert, { openAlert } from 'simple-react-alert';
 
 import SignUser from "../services/SignUser";
 import GenderRadioGroup from '../components/GenderRadioGroup';
+import ButtonCircularAnimation from '../components/ButtonCircularAnimation';
 
 function formGenderRadioGroup({ gender, setGender, className }) {
   if (!t("form.showGenders")) { return null }
@@ -90,13 +91,18 @@ function Form(props) {
   const [older18Years, setOlder18Years]           = useState(false);
   const [receiveNewsletter, setReceiveNewsletter] = useState(false);
   const [gender, setGender]                       = useState("male");
+  const [loading, setLoading]                     = useState(false);
 
   const onSubmit = (e) => {
+
+    setLoading(true);
 
     SignUser({ email, older18Years, receiveNewsletter, gender }).then(() => {
       openAlert({ message: t("form.submitSuccess"), type: "success" });
     }).catch(() => {
       openAlert({ message: t("form.submitError"), type: "danger" });
+    }).finally(() => {
+      setLoading(false);
     });
 
     e.preventDefault();
@@ -130,9 +136,11 @@ function Form(props) {
             fullWidth
             variant="contained"
             color="primary"
+            disabled={loading}
             className={classes.submit}
           >
             {t("form.signIn")}
+            {loading && <ButtonCircularAnimation />}
           </Button>
         </form>
       </Paper>
