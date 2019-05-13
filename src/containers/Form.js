@@ -18,7 +18,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import SignUser from "../services/SignUser";
 
 function Form(props) {
-  const { classes } = props;
+  const { classes, t } = props;
 
   const [email, setEmail]                         = useState("");
   const [older18Years, setOlder18Years]           = useState(false);
@@ -38,37 +38,37 @@ function Form(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          {t("form.signIn")}
         </Typography>
         <form className={classes.form} onSubmit={onSubmit}>
           <FormControl margin="normal" required fullWidth>
-            <InputLabel htmlFor="email">Email Address</InputLabel>
+            <InputLabel htmlFor="email">{t("form.email")}</InputLabel>
             <Input type="email" id="email" name="email" autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} autoFocus />
           </FormControl>
 
           <FormControlLabel
             control={<Checkbox checked={older18Years} onChange={(_, checked) => setOlder18Years(checked)} color="primary" required />}
-            label="By law you must be older than 18 years old?"
+            label={t("form.older18Years")}
           />
 
           <FormControlLabel
             control={<Checkbox checked={receiveNewsletter} onChange={(_, checked) => setReceiveNewsletter(checked)} color="primary" />}
-            label="Receive a newsletter?"
+            label={t("form.receiveNewsletter")}
           />
 
           <FormControl fullWidth>
-            <FormLabel component="legend">Gender</FormLabel>
+            <FormLabel component="legend">{t("form.gender")}</FormLabel>
             <RadioGroup value={gender} onChange={(_, gender) => setGender(gender)} className={classes.genderRadioGroup} >
               <FormControlLabel
                 value="male"
-                control={<Radio value="male" aria-label="Male"  />}
-                label="Male"
+                control={<Radio value="male" aria-label={t("form.genders.male")} />}
+                label={t("form.genders.male")}
               />
               
               <FormControlLabel
                 value="female"
-                control={<Radio value="female" aria-label="Female"  />}
-                label="Female"
+                control={<Radio value="female" aria-label={t("form.genders.female")} />}
+                label={t("form.genders.female")}
               />
             </RadioGroup>
           </FormControl>
@@ -80,7 +80,7 @@ function Form(props) {
             color="primary"
             className={classes.submit}
           >
-            Sign in
+            {t("form.signIn")}
           </Button>
         </form>
       </Paper>

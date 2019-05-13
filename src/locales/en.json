@@ -1,0 +1,10 @@
+{
+  "form": {
+    "signIn": "Sign in",
+    "gender": "Gender",
+    "genders": { "male": "Male", "female": "Female" },
+    "receiveNewsletter": "Receive a newsletter?",
+    "older18Years": "By law you must be older than 18 years old?",
+    "email": "Email Address"
+  }
+}
