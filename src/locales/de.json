@@ -5,6 +5,10 @@
     "genders": { "male": "Männlich", "female": "Weiblich" },
     "receiveNewsletter": "Newsletter erhalten?",
     "older18Years": "Laut Gesetz müssen Sie älter als 18 Jahre sein?",
-    "email": "E-Mail-Addresse"
+    "email": "E-Mail-Addresse",
+    "showReceiveNewsletter": true,
+    "showEmail": true,
+    "showOlder18Years": true,
+    "showGenders": false
   }
 }

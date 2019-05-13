@@ -1,6 +1,5 @@
 import Form from "./containers/Form";
 import withStyles from '@material-ui/core/styles/withStyles';
-import { withNamespaces } from 'react-i18next';
 
 const styles = theme => ({
   main: {
@@ -38,4 +37,4 @@ const styles = theme => ({
   },
 });
 
-export default withNamespaces()(withStyles(styles)(Form));
+export default withStyles(styles)(Form);
