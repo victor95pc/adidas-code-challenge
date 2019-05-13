@@ -8,6 +8,7 @@ Use the param **lng** which value could be **en**(English) or **de**(German), fo
  - i18next: Internalization library.
  - i18next-browser-languagedetector: Detect language by the browser.
  - react-i18next: Bind i18next to react.
+ - simple-react-alert: Simple lib to show a custom alert.
 
 ## Available Scripts
 
